@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.chatapplication.controller.ClientFormController">
+   <children>
+      <!-- Header -->
+      <Label alignment="CENTER" layoutX="127.0" prefHeight="50.0" prefWidth="546.0" style="-fx-background-color: green; -fx-background-radius: 15;" text="Client Side" textFill="WHITE">
+         <font>
+            <Font name="Ubuntu Medium" size="24.0" />
+         </font>
+      </Label>
+
+      <!-- Chat Area -->
+      <ScrollPane fx:id="scrollPane" layoutX="0.0" layoutY="50.0" prefHeight="450.0" prefWidth="800.0" style="-fx-background-color: #f5f5f5;">
+         <content>
+            <VBox fx:id="chatBox" spacing="10" style="-fx-padding: 10;" />
+         </content>
+      </ScrollPane>
+
+      <!-- Input Area -->
+      <HBox layoutX="0.0" layoutY="500.0" prefHeight="100.0" prefWidth="800.0" style="-fx-background-color: #ffffff; -fx-padding: 10;">
+         <children>
+            <TextField fx:id="txtFeild" prefHeight="40.0" prefWidth="406.0" promptText="Type a message..." style="-fx-background-radius: 15; -fx-border-radius: 15;" />
+            <Label prefHeight="17.0" prefWidth="20.0" />
+            <TextField fx:id="name" prefHeight="38.0" prefWidth="119.0" promptText="Name" style="-fx-background-radius: 15;" />
+            <Label prefHeight="17.0" prefWidth="20.0" />
+            <Button fx:id="btnSend" mnemonicParsing="false" onAction="#btnSendOnAction" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: green; -fx-text-fill: white; -fx-background-radius: 15;" text="Send" />
+            <Label prefHeight="17.0" prefWidth="15.0" />
+            <MenuButton fx:id="btnAttach" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="86.0" style="-fx-background-color: Green; -fx-text-fill: white; -fx-background-radius: 15;" text="Option" textAlignment="CENTER" textFill="WHITE">
+               <items>
+                  <MenuItem onAction="#btnSendImageOnAction" text="Send Image" />
+                  <MenuItem onAction="#btnSendFileOnAction" text="Send File" />
+               </items>
+            </MenuButton>
+            <Label prefHeight="17.0" prefWidth="15.0" />
+            <Button mnemonicParsing="false" onAction="#disconnet" prefHeight="40.0" prefWidth="85.0" style="-fx-background-color: red; -fx-background-radius: 40;" text="Disconnet" textFill="WHITE" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
